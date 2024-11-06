@@ -4,8 +4,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:components="clr-namespace:AppListaCompras.Maui.Library.Components"
+    xmlns:converters="clr-namespace:AppListaCompras.Maui.Library.Converters"
     xmlns:vm="clr-namespace:AppListaCompras.Maui.ViewModels"
     Title="ListToByPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:TextSharedListConverter x:Key="TextSharedListConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.BindingContext>
         <vm:ListToBuyViewModel />
@@ -21,45 +28,42 @@
         </StackLayout>
 
         <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy}">
+            <CollectionView.Header>
+                <components:HorizontalLine Grid.ColumnSpan="3" Stroke="Gray" />
+            </CollectionView.Header>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 
-                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="1, Auto, 1, 30">
+                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 1, 30, 1">
                         <!--  Linha 0  -->
-                        <components:HorizontalLine Grid.ColumnSpan="3" Stroke="Gray" />
-
-                        <!--  Linha 1  -->
                         <Image
-                            Grid.Row="1"
                             Margin="15,10,0,10"
                             HeightRequest="64"
                             Source="my_list.png" />
                         <VerticalStackLayout
-                            Grid.Row="1"
                             Grid.Column="1"
                             Margin="15,0,0,0"
                             VerticalOptions="Center">
                             <Label Style="{StaticResource Paragraph}" Text="{Binding Nome}" />
                             <HorizontalStackLayout>
                                 <Label Style="{StaticResource SmallText}" Text="{Binding Produtos.Count}" />
-                                <Label Style="{StaticResource SmallText}" Text=" itens - " />
-                                <Label Style="{StaticResource SmallTextBold}" Text="{Binding Usuarios.Count}" />
+                                <Label Style="{StaticResource SmallText}" Text=" itens " />
+                                <Label Style="{StaticResource SmallTextBold}" Text="{Binding Usuarios.Count, Converter={StaticResource TextSharedListConverter}}" />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <Label
-                            Grid.Row="1"
                             Grid.Column="2"
                             Text=" R$ 55,00"
                             VerticalOptions="Center" />
 
-                        <!--  Linha 2  -->
+                        <!--  Linha 1  -->
                         <components:HorizontalLine
-                            Grid.Row="2"
+                            Grid.Row="1"
                             Grid.ColumnSpan="3"
                             Stroke="LightGray" />
 
-                        <!--  Linha 3  -->
-                        <HorizontalStackLayout Grid.Row="3" Grid.ColumnSpan="3">
+                        <!--  Linha 2  -->
+                        <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="3">
                             <Button
                                 ImageSource="share.png"
                                 Style="{StaticResource ButtonBorderLess}"
@@ -70,6 +74,11 @@
                                 Text="Excluir" />
                         </HorizontalStackLayout>
 
+                        <!--  Linha 4  -->
+                        <components:HorizontalLine
+                            Grid.Row="4"
+                            Grid.ColumnSpan="3"
+                            Stroke="Gray" />
                     </Grid>
 
                 </DataTemplate>
