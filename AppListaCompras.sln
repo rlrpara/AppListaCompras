@@ -7,7 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Tests", "01-Tests", "{B2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Presentation", "02-Presentation", "{267ECE2D-364C-4E8C-9460-593A98E14BF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppListaCompras.Maui", "src\AppListaCompras.Maui\AppListaCompras.Maui.csproj", "{3770047B-E62B-4411-877A-CD69F0B081EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppListaCompras.Maui", "src\AppListaCompras.Maui\AppListaCompras.Maui.csproj", "{3770047B-E62B-4411-877A-CD69F0B081EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Service", "03-Service", "{6028B294-2C62-447A-A268-A24CB408D34D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Domains", "04-Domains", "{CF5519DC-BF0D-46DA-AB2C-D3EA77A2027A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
