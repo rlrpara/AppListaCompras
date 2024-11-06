@@ -7,8 +7,7 @@ namespace AppListaCompras.Maui
         public App()
         {
             InitializeComponent();
-
-            MainPage = new FirstPage();
+            MainPage = (VersionTracking.IsFirstLaunchEver) ? new FirstPage() : MainPage = new AppShell();
         }
     }
 }

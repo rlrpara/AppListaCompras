@@ -81,14 +81,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
+	  <Compile Update="Views\ListToBuyPage.xaml.cs">
+	    <DependentUpon>ListToBuyPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\FirstPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ListToByPage.xaml">
+	  <MauiXaml Update="Views\ListToBuyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProfilePage.xaml">
