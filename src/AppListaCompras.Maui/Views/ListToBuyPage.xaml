@@ -3,6 +3,7 @@
     x:Class="AppListaCompras.Maui.Views.ListToByPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:AppListaCompras.Maui.Library.Components"
     xmlns:vm="clr-namespace:AppListaCompras.Maui.ViewModels"
     Title="ListToByPage">
 
@@ -23,13 +24,18 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 
-                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 30">
+                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="1, Auto, 1, 30">
+                        <!--  Linha 0  -->
+                        <components:HorizontalLine Grid.ColumnSpan="3" Stroke="Gray" />
 
+                        <!--  Linha 1  -->
                         <Image
+                            Grid.Row="1"
                             Margin="15,10,0,10"
                             HeightRequest="64"
                             Source="my_list.png" />
                         <VerticalStackLayout
+                            Grid.Row="1"
                             Grid.Column="1"
                             Margin="15,0,0,0"
                             VerticalOptions="Center">
@@ -41,11 +47,19 @@
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <Label
+                            Grid.Row="1"
                             Grid.Column="2"
                             Text=" R$ 55,00"
                             VerticalOptions="Center" />
 
-                        <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3">
+                        <!--  Linha 2  -->
+                        <components:HorizontalLine
+                            Grid.Row="2"
+                            Grid.ColumnSpan="3"
+                            Stroke="LightGray" />
+
+                        <!--  Linha 3  -->
+                        <HorizontalStackLayout Grid.Row="3" Grid.ColumnSpan="3">
                             <Button
                                 ImageSource="share.png"
                                 Style="{StaticResource ButtonBorderLess}"
