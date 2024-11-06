@@ -81,6 +81,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\AppListaCompras.Service\AppListaCompras.Service.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="Views\ListToBuyPage.xaml.cs">
 	    <DependentUpon>ListToBuyPage.xaml</DependentUpon>
 	  </Compile>
